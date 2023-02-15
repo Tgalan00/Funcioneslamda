@@ -17,6 +17,26 @@ fun dialectalEOf(sentence: List<Char>): List<Char> {
     return sentenceWithE
 }
 
+fun sumLists(l1: List<Int>, l2: List<Int>): List<Int> {
+
+    val list = l1.zip(l2) { a, b ->  a + b
+    }
+
+    return list
+
+}
+
+fun findInsert(orderedList: List<Int>, newNumber: Int): Int {
+
+    orderedList.forEachIndexed { i, elem ->
+        if (elem > newNumber) {
+            return i
+        }
+    }
+
+    return orderedList.size + 1
+}
+
 fun <E> similar(l1: List<E>, l2: List<E>): Boolean {
     return l1.all { l2.contains(it) } && l2.all { l1.contains(it) }
 }
